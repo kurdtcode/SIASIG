@@ -9,12 +9,8 @@
 <link rel="icon" type="image/png" href="{{ asset('assets/admin/img/favicon.png')}}">
 
 <title>
-  
    Admin Dashboard PCU Choir
-  
 </title>
-
-
 
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -320,26 +316,8 @@
 </nav>
 
 <!-- End Navbar -->
-
-
-        
-
-
             <div class="container-fluid py-4">
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 <h6>If you are not redirected automatically, follow <a href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard ">this link</a>.</h6>
 <div class="row">
@@ -820,102 +798,11 @@
     </div>
 </div>
 
-      
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--   Core JS Files   -->
 <script src="{{ asset('assets/admin/js/core/popper.min.js')}}" ></script>
 <script src="{{ asset('assets/admin/js/core/bootstrap.min.js')}}" ></script>
 <script src="{{ asset('assets/admin/js/plugins/perfect-scrollbar.min.js')}}" ></script>
 <script src="{{ asset('assets/admin/js/plugins/smooth-scrollbar.min.js')}}" ></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script>
   var win = navigator.platform.indexOf('Win') > -1;
@@ -929,7 +816,6 @@
 
 <!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-
 
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc --><script src="{{ asset('')}}./assets/js/material-dashboard.min.js?v=3.1.0"></script>
   </body>
