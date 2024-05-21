@@ -55,27 +55,27 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/billing.html">
+          <a class="nav-link text-white " href="../pages/managetask.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">receipt_long</i>
             </div>
-            <span class="nav-link-text ms-1">Billing</span>
+            <span class="nav-link-text ms-1">Manage Task</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/virtual-reality.html">
+          <a class="nav-link text-white " href="../pages/proposal.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">view_in_ar</i>
             </div>
-            <span class="nav-link-text ms-1">Virtual Reality</span>
+            <span class="nav-link-text ms-1">Proposal</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/rtl.html">
+          <a class="nav-link text-white " href="../pages/portofolio.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
             </div>
-            <span class="nav-link-text ms-1">RTL</span>
+            <span class="nav-link-text ms-1">Portofolio</span>
           </a>
         </li>
         <li class="nav-item">
@@ -117,8 +117,7 @@
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
-        <a class="btn btn-outline-primary mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
-        <a class="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+        <a class="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Sign Out</a>
       </div>
     </div>
   </aside>
@@ -142,11 +141,11 @@
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
-              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
+              {{-- <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a> --}}
             </li>
-            <li class="mt-2">
+            {{-- <li class="mt-2">
               <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-            </li>
+            </li> --}}
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -254,13 +253,13 @@
                 <i class="material-icons opacity-10">weekend</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                <h4 class="mb-0">$53k</h4>
+                <p class="text-sm mb-0 text-capitalize">Finished Performance</p>
+                <h4 class="mb-0">10</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last month</p>
             </div>
           </div>
         </div>
@@ -281,7 +280,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+        {{-- <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
@@ -297,8 +296,8 @@
               <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
             </div>
           </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
+        </div> --}}
+        {{-- <div class="col-xl-3 col-sm-6">
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
@@ -314,7 +313,7 @@
               <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
@@ -327,12 +326,12 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Website Views</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 ">Website Visits</h6>
+              <p class="text-sm ">Number of people who view the website</p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
+                <p class="mb-0 text-sm"> 2 days ago </p>
               </div>
             </div>
           </div>
@@ -347,8 +346,8 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 "> Daily Sales </h6>
-              <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in today sales. </p>
+              <h6 class="mb-0 "> Participant Performance </h6>
+              <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in attendance today . </p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
@@ -367,8 +366,8 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Completed Tasks</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 ">Finished Performance</h6>
+              <p class="text-sm ">Last Choir Performance</p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
@@ -409,10 +408,10 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project Name</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Practice Completion</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -420,31 +419,25 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-xd.svg')}}" class="avatar avatar-sm me-3" alt="xd">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Material XD Version</h6>
+                            <h6 class="mb-0 text-sm">Dies Natalies 64th</h6>
                           </div>
                         </div>
                       </td>
                       <td>
                         <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Kevin Daniel">
                             <img src="{{ asset('assets/admin/img/team-1.jpg')}}" alt="team1">
                           </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Darlene Sharon">
                             <img src="{{ asset('assets/admin/img/team-2.jpg')}}" alt="team2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="{{ asset('assets/admin/img/team-3.jpg')}}" alt="team3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{{ asset('assets/admin/img/team-4.jpg')}}" alt="team4">
                           </a>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $14,000 </span>
+                        <span class="text-xs font-weight-bold"> 29 Juli 2023 </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
@@ -463,10 +456,10 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-atlassian.svg')}}" class="avatar avatar-sm me-3" alt="atlassian">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                            <h6 class="mb-0 text-sm">Wisuda</h6>
                           </div>
                         </div>
                       </td>
@@ -481,7 +474,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $3,000 </span>
+                        <span class="text-xs font-weight-bold"> 31 Juli 2023 </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
@@ -500,10 +493,10 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-slack.svg')}}" class="avatar avatar-sm me-3" alt="team7">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                            <h6 class="mb-0 text-sm">Pelayanan KU</h6>
                           </div>
                         </div>
                       </td>
@@ -537,10 +530,10 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-spotify.sv')}}g" class="avatar avatar-sm me-3" alt="spotify">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                            <h6 class="mb-0 text-sm">Innofashion</h6>
                           </div>
                         </div>
                       </td>
@@ -561,7 +554,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $20,500 </span>
+                        <span class="text-xs font-weight-bold"> 31 Juli 2024 </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
@@ -580,10 +573,10 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-jira.svg')}}" class="avatar avatar-sm me-3" alt="jira">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                            <h6 class="mb-0 text-sm">Bharatika</h6>
                           </div>
                         </div>
                       </td>
@@ -595,7 +588,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $500 </span>
+                        <span class="text-xs font-weight-bold"> 2 Agustus 2024 </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
@@ -614,10 +607,10 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="{{ asset('assets/admin/img/small-logos/logo-invision.svg')}}" class="avatar avatar-sm me-3" alt="invision">
+                            <img src="{{ asset('assets/admin/img/small-logos/logo-activity.svg')}}" class="avatar avatar-sm me-3" alt="activity">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                            <h6 class="mb-0 text-sm">SICF</h6>
                           </div>
                         </div>
                       </td>
@@ -632,7 +625,7 @@
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $2,000 </span>
+                        <span class="text-xs font-weight-bold"> 4 Agustus 2024 </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
@@ -656,7 +649,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="card h-100">
             <div class="card-header pb-0">
-              <h6>Orders overview</h6>
+              <h6>Participant Performance</h6>
               <p class="text-sm">
                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
                 <span class="font-weight-bold">24%</span> this month
@@ -669,8 +662,8 @@
                     <i class="material-icons text-success text-gradient">notifications</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -678,8 +671,8 @@
                     <i class="material-icons text-danger text-gradient">code</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -687,8 +680,8 @@
                     <i class="material-icons text-info text-gradient">shopping_cart</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -696,8 +689,8 @@
                     <i class="material-icons text-warning text-gradient">credit_card</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -705,8 +698,8 @@
                     <i class="material-icons text-primary text-gradient">key</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
                 <div class="timeline-block">
@@ -714,8 +707,8 @@
                     <i class="material-icons text-dark text-gradient">payments</i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Kevin Daniel (Tidak Hadir)</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Mengerjakan Skripsi</p>
                   </div>
                 </div>
               </div>
