@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('layouts.sign-up');
+    return view('layouts.admin-dashboard');
 });
 
 Auth::routes();
