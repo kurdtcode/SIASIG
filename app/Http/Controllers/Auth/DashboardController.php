@@ -11,45 +11,58 @@ use App\Models\Proposal;
 
 class DashboardController extends Controller
 {
+    /**
+     * Menampilkan halaman dashboard utama
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
-        // Menampilkan dashboard utama
-        return view('dashboard.index');
+        $anggota = Anggota::all();
+        return view('dashboard.index', compact('anggota'));
     }
 
+    /**
+     * Menampilkan halaman tabel
+     *
+     * @return \Illuminate\View\View
+     */
     public function tables()
     {
-        // Menampilkan tabel partitur dan anggota
-        $anggota = Anggota::all();
         $partitur = Partitur::all();
-        return view('dashboard.tables', compact('anggota', 'partitur'));
+        return view('dashboard.tables', compact('partitur'));
     }
 
+    /**
+     * Menampilkan halaman manajemen tugas
+     *
+     * @return \Illuminate\View\View
+     */
     public function manageTask()
     {
-        // Menampilkan halaman untuk mengatur tugas dan latihan
         $tugas = Tugas::all();
-        $latihan = Latihan::all();
-        return view('dashboard.manage-task', compact('tugas', 'latihan'));
+        return view('dashboard.manage-task', compact('tugas'));
     }
 
+    /**
+     * Menampilkan halaman proposal
+     *
+     * @return \Illuminate\View\View
+     */
     public function proposal()
     {
-        // Menampilkan halaman untuk mengelola proposal
-        $proposals = Proposal::all();
-        return view('dashboard.proposal', compact('proposals'));
+        $proposal = Proposal::all();
+        return view('dashboard.proposal', compact('proposal'));
     }
 
+    /**
+     * Menampilkan halaman portofolio
+     *
+     * @return \Illuminate\View\View
+     */
     public function portofolio()
     {
-        // Menampilkan halaman untuk mengelola portofolio
-        return view('dashboard.portofolio');
-    }
-
-    public function signOut()
-    {
-        // Logout dan kembali ke halaman utama
-        auth()->logout();
-        return redirect('/');
+        $latihan = Latihan::all();
+        return view('dashboard.portofolio', compact('latihan'));
     }
 }
