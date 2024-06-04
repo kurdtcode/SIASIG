@@ -9,8 +9,6 @@ class Partitur extends Model
 {
     use HasFactory;
 
-    protected $table = 'partitur';
-
     protected $fillable = [
         'judul',
         'pembuat_aransemen',
