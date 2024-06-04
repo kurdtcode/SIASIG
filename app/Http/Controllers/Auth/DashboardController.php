@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Anggota;
+use App\Models\Partitur;
+use App\Models\Tugas;
+use App\Models\Proposal;
+use App\Models\Latihan;
+use Illuminate\Support\Facades\Log;
 
 class DashboardController extends Controller
 {

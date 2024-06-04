@@ -3,8 +3,8 @@
 
 @section('content')
 <div class="container">
-    <h1>Proposal</h1>
-    <p>Ini adalah halaman untuk menambahkan, mengubah, dan menghapus performance baru serta menerima proposal dari halaman umum.</p>
+    <h1>Proposals</h1>
+    <p>Ini adalah halaman untuk menambahkan, mengubah, dan menghapus performance baru serta menerima proposal baru.</p>
     <h2>Proposals</h2>
     <table>
         <thead>
@@ -16,11 +16,11 @@
         </thead>
         <tbody>
             @foreach ($proposals as $item)
-                <tr>
-                    <td>{{ $item->nama_kegiatan }}</td>
-                    <td>{{ $item->deskripsi }}</td>
-                    <td>{{ $item->waktu }}</td>
-                </tr>
+            <tr>
+                <td>{{ $item->nama_kegiatan }}</td>
+                <td>{{ $item->deskripsi }}</td>
+                <td>{{ $item->waktu }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>
