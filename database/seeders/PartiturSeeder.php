@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use App\Models\Partitur;
 
@@ -13,14 +15,14 @@ class PartiturSeeder extends Seeder
     public function run()
     {
         Partitur::create([
-            'judul' => 'Example Title',
-            'pembuat_aransemen' => 'Composer Name',
-            'komposer' => 'Composer Name',
-            'genre_lagu' => 'Genre',
+            'judul' => 'Lagu Contoh',
+            'pembuat_aransemen' => 'Jane Doe',
+            'komposer' => 'John Smith',
+            'genre_lagu' => 'Pop',
             'link_youtube' => 'https://youtube.com/example',
-            'kebutuhan_instrumen' => 'Instrument Needs',
-            'tingkat_kesulitan' => 'Difficulty Level',
-            'kebutuhan_solo' => 'Solo Needs',
+            'kebutuhan_instrumen' => 'Gitar',
+            'tingkat_kesulitan' => 'Sedang',
+            'kebutuhan_solo' => 'Ya',
             'jenis_suara' => 'SATB',
         ]);
     }

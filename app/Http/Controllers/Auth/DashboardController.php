@@ -28,9 +28,11 @@ class DashboardController extends Controller
     // Metode lainnya
     public function tables()
     {
-        $partitur = Partitur::all();
-        return view('dashboard.tables', compact('partitur'));
+        $anggotas = \App\Models\Anggota::all();
+        $partiturs = \App\Models\Partitur::all();
+        return view('dashboard.tables', compact('anggotas', 'partiturs'));
     }
+
 
     public function manageTask()
     {
@@ -40,8 +42,8 @@ class DashboardController extends Controller
 
     public function proposal()
     {
-        $proposal = Proposal::all();
-        return view('dashboard.proposal', compact('proposal'));
+        $proposals = Proposal::all();
+        return view('dashboard.proposal', compact('proposals'));
     }
 
     public function portofolio()
