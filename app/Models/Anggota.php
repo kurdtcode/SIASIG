@@ -9,6 +9,9 @@ class Anggota extends Model
 {
     use HasFactory;
 
+    // Pastikan nama tabel adalah 'anggota'
+    protected $table = 'anggota';
+
     protected $fillable = [
         'NRP',
         'name',

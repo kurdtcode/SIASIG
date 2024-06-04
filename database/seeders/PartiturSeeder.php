@@ -15,15 +15,15 @@ class PartiturSeeder extends Seeder
     public function run()
     {
         Partitur::create([
-            'judul' => 'Lagu Contoh',
-            'pembuat_aransemen' => 'Jane Doe',
-            'komposer' => 'John Smith',
-            'genre_lagu' => 'Pop',
-            'link_youtube' => 'https://youtube.com/example',
-            'kebutuhan_instrumen' => 'Gitar',
-            'tingkat_kesulitan' => 'Sedang',
-            'kebutuhan_solo' => 'Ya',
-            'jenis_suara' => 'SATB',
+            'judul' => 'Title 1',
+            'pembuat_aransemen' => 'Arranger 1',
+            'komposer' => 'Composer 1',
+            'genre_lagu' => 'Genre 1',
+            'link_youtube' => 'https://youtube.com/...',
+            'kebutuhan_instrumen' => 'Instrument 1',
+            'tingkat_kesulitan' => 'Difficulty 1',
+            'kebutuhan_solo' => 'Solo 1',
+            'jenis_suara' => 'Voice Type 1',
         ]);
     }
 }

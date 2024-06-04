@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,11 +19,11 @@ class CreatePartiturTable extends Migration
             $table->string('pembuat_aransemen');
             $table->string('komposer');
             $table->string('genre_lagu');
-            $table->string('link_youtube')->nullable();
-            $table->string('kebutuhan_instrumen')->nullable();
+            $table->string('link_youtube');
+            $table->string('kebutuhan_instrumen');
             $table->string('tingkat_kesulitan');
-            $table->string('kebutuhan_solo')->nullable();
-            $table->string('jenis_suara')->nullable();
+            $table->string('kebutuhan_solo');
+            $table->string('jenis_suara');
             $table->timestamps();
         });
     }
