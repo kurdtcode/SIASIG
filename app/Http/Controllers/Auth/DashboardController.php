@@ -25,14 +25,17 @@ class DashboardController extends Controller
         return view('dashboard.index', compact('anggota'));
     }
 
-    // Metode lainnya
-    public function tables()
+    public function showAnggota()
     {
-        $anggotas = \App\Models\Anggota::all();
-        $partiturs = \App\Models\Partitur::all();
-        return view('dashboard.tables', compact('anggotas', 'partiturs'));
+        $data = Anggota::all();
+        return view('dashboard.tables-anggota', ['data' => $data]);
     }
 
+    public function showPartitur()
+    {
+        $data = Partitur::all();
+        return view('dashboard.tables-partitur', ['data' => $data]);
+    }
 
     public function manageTask()
     {

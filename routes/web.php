@@ -25,10 +25,13 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Middleware untuk memastikan hanya pengguna yang sudah login yang bisa mengakses dashboard
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin-dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-    Route::get('/tables', [DashboardController::class, 'tables'])->name('dashboard.tables');
     Route::get('/manage-task', [DashboardController::class, 'manageTask'])->name('dashboard.manageTask');
     Route::get('/proposal', [DashboardController::class, 'proposal'])->name('dashboard.proposal');
     Route::get('/portofolio', [DashboardController::class, 'portofolio'])->name('dashboard.portofolio');
+    
+    // Route for Tables
+    Route::get('/tables/anggota', [DashboardController::class, 'showAnggota'])->name('dashboard.tables-anggota');
+    Route::get('/tables/partitur', [DashboardController::class, 'showPartitur'])->name('dashboard.tables-partitur');
 });
 
 // Halaman awal

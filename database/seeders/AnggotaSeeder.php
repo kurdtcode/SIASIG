@@ -14,6 +14,9 @@ class AnggotaSeeder extends Seeder
      */
     public function run()
     {
+        $anggota = new Anggota();
+        dd($anggota->getTable()); // Debugging untuk mengecek nama tabel
+
         Anggota::create([
             'NRP' => '123456',
             'name' => 'John Doe',

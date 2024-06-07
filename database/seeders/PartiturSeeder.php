@@ -14,6 +14,9 @@ class PartiturSeeder extends Seeder
      */
     public function run()
     {
+        $partitur = new Partitur();
+        dd($partitur->getTable()); // Debugging untuk mengecek nama tabel
+
         Partitur::create([
             'judul' => 'Title 1',
             'pembuat_aransemen' => 'Arranger 1',

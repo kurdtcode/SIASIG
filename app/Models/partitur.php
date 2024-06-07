@@ -9,6 +9,12 @@ class Partitur extends Model
 {
     use HasFactory;
 
+    protected $table = 'partitur';
+
+    public $incrementing = true;
+
+    protected $keyType = 'string';
+
     protected $fillable = [
         'judul',
         'pembuat_aransemen',

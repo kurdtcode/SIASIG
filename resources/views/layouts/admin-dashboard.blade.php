@@ -47,12 +47,20 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('dashboard.tables') }}">
+            <a class="nav-link text-white" href="{{ route('dashboard.tables-anggota') }}">
                 <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     <i class="material-icons opacity-10">table_view</i>
                 </div>
-                <span class="nav-link-text ms-1">Tables</span>
+                <span class="nav-link-text ms-1">Tabel Anggota</span>
             </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ route('dashboard.tables-partitur') }}">
+              <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                  <i class="material-icons opacity-10">table_view</i>
+              </div>
+              <span class="nav-link-text ms-1">Table Partitur</span>
+          </a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-white" href="{{ route('dashboard.manageTask') }}">

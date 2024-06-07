@@ -12,6 +12,13 @@ class Anggota extends Model
     // Pastikan nama tabel adalah 'anggota'
     protected $table = 'anggota';
 
+    protected $primaryKey = 'NRP';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    public $timestamps = false;
     protected $fillable = [
         'NRP',
         'name',
@@ -20,3 +27,4 @@ class Anggota extends Model
         'jenis_suara',
     ];
 }
+
