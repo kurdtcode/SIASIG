@@ -26,4 +26,15 @@ class Partitur extends Model
         'kebutuhan_solo',
         'jenis_suara',
     ];
+
+    public function anggota()
+    {
+        return $this->belongsTo(Anggota::class);
+    }
+
+    public function partitur()
+    {
+        return $this->belongsTo(Partitur::class);
+    }
 }
+
