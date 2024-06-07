@@ -48,7 +48,8 @@ class ManageTaskController extends Controller
         $task = new ManageTask();
         $task->nama_kegiatan = $request->nama_kegiatan;
         $task->jenis_kegiatan = $request->jenis_kegiatan;
-        $task->waktu = $request->waktu;
+        $task->start_date = $request->start_date;
+        $task->end_date = $request->end_date;
         $task->list_id_anggota = implode(',', $request->session()->get('selectedAnggota', []));
         $task->list_id_partitur = implode(',', $request->session()->get('selectedPartitur', []));
         $task->list_id_latihan = $request->list_id_latihan;
@@ -70,7 +71,8 @@ class ManageTaskController extends Controller
         $task = ManageTask::findOrFail($id);
         $task->nama_kegiatan = $request->nama_kegiatan;
         $task->jenis_kegiatan = $request->jenis_kegiatan;
-        $task->waktu = $request->waktu;
+        $task->start_date = $request->start_date;
+        $task->end_date = $request->end_date;
         $task->list_id_anggota = implode(',', $request->session()->get('selectedAnggota', []));
         $task->list_id_partitur = implode(',', $request->session()->get('selectedPartitur', []));
         $task->list_id_latihan = $request->list_id_latihan;

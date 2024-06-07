@@ -120,7 +120,10 @@
       </div>
       <div class="sidenav-footer position-absolute w-100 bottom-0 ">
         <div class="mx-3">
-          <a class="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Sign Out</a>
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn bg-gradient-primary w-100">Sign Out</button>
+          </form>
         </div>
       </div>
     </aside>
@@ -202,113 +205,115 @@
             </div>
         </div>
 
-        <table class="table table-bordered mt-3">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Judul</th>
-                    <th>Pembuat Aransemen</th>
-                    <th>Komposer</th>
-                    <th>Genre Lagu</th>
-                    <th>Link YouTube</th>
-                    <th>Kebutuhan Instrumen</th>
-                    <th>Tingkat Kesulitan</th>
-                    <th>Kebutuhan Solo</th>
-                    <th>Jenis Suara</th>
-                    <th>Created At</th>
-                    <th>Updated At</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Asumsikan Anda memiliki variabel $item yang berisi data partitur -->
-                @foreach ($item as $partitur)
-                <tr>
-                    <td>{{ $partitur->id }}</td>
-                    <td>{{ $partitur->judul }}</td>
-                    <td>{{ $partitur->pembuat_aransemen }}</td>
-                    <td>{{ $partitur->komposer }}</td>
-                    <td>{{ $partitur->genre_lagu }}</td>
-                    <td>{{ $partitur->link_youtube }}</td>
-                    <td>{{ $partitur->kebutuhan_instrumen }}</td>
-                    <td>{{ $partitur->tingkat_kesulitan }}</td>
-                    <td>{{ $partitur->kebutuhan_solo }}</td>
-                    <td>{{ $partitur->jenis_suara }}</td>
-                    <td>{{ $partitur->created_at }}</td>
-                    <td>{{ $partitur->updated_at }}</td>
-                    <td>
-                        <!-- Tombol Edit -->
-                        <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal{{ $partitur->id }}">Edit</button>
-                        
-                        <!-- Tombol Delete -->
-                        <form action="{{ route('partitur.destroy', $partitur->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
-                    </td>
-                </tr>
+        <div class="table-responsive">
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Judul</th>
+                        <th>Pembuat Aransemen</th>
+                        <th>Komposer</th>
+                        <th>Genre Lagu</th>
+                        <th>Link YouTube</th>
+                        <th>Kebutuhan Instrumen</th>
+                        <th>Tingkat Kesulitan</th>
+                        <th>Kebutuhan Solo</th>
+                        <th>Jenis Suara</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Asumsikan Anda memiliki variabel $item yang berisi data partitur -->
+                    @foreach ($item as $partitur)
+                    <tr>
+                        <td>{{ $partitur->id }}</td>
+                        <td>{{ $partitur->judul }}</td>
+                        <td>{{ $partitur->pembuat_aransemen }}</td>
+                        <td>{{ $partitur->komposer }}</td>
+                        <td>{{ $partitur->genre_lagu }}</td>
+                        <td>{{ $partitur->link_youtube }}</td>
+                        <td>{{ $partitur->kebutuhan_instrumen }}</td>
+                        <td>{{ $partitur->tingkat_kesulitan }}</td>
+                        <td>{{ $partitur->kebutuhan_solo }}</td>
+                        <td>{{ $partitur->jenis_suara }}</td>
+                        <td>{{ $partitur->created_at }}</td>
+                        <td>{{ $partitur->updated_at }}</td>
+                        <td>
+                            <!-- Tombol Edit -->
+                            <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal{{ $partitur->id }}">Edit</button>
+                            
+                            <!-- Tombol Delete -->
+                            <form action="{{ route('partitur.destroy', $partitur->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
 
-                <!-- Modal Edit -->
-                <div class="modal fade" id="editModal{{ $partitur->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $partitur->id }}" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editModalLabel{{ $partitur->id }}">Edit Partitur</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="{{ route('partitur.update', $partitur->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-                                    <div class="form-group">
-                                        <label for="judul{{ $partitur->id }}">Judul</label>
-                                        <input type="text" class="form-control" id="judul{{ $partitur->id }}" name="judul" value="{{ $partitur->judul }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pembuat_aransemen{{ $partitur->id }}">Pembuat Aransemen</label>
-                                        <input type="text" class="form-control" id="pembuat_aransemen{{ $partitur->id }}" name="pembuat_aransemen" value="{{ $partitur->pembuat_aransemen }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="komposer{{ $partitur->id }}">Komposer</label>
-                                        <input type="text" class="form-control" id="komposer{{ $partitur->id }}" name="komposer" value="{{ $partitur->komposer }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="genre_lagu{{ $partitur->id }}">Genre Lagu</label>
-                                        <input type="text" class="form-control" id="genre_lagu{{ $partitur->id }}" name="genre_lagu" value="{{ $partitur->genre_lagu }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="link_youtube{{ $partitur->id }}">Link YouTube</label>
-                                        <input type="text" class="form-control" id="link_youtube{{ $partitur->id }}" name="link_youtube" value="{{ $partitur->link_youtube }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kebutuhan_instrumen{{ $partitur->id }}">Kebutuhan Instrumen</label>
-                                        <input type="text" class="form-control" id="kebutuhan_instrumen{{ $partitur->id }}" name="kebutuhan_instrumen" value="{{ $partitur->kebutuhan_instrumen }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="tingkat_kesulitan{{ $partitur->id }}">Tingkat Kesulitan</label>
-                                        <input type="text" class="form-control" id="tingkat_kesulitan{{ $partitur->id }}" name="tingkat_kesulitan" value="{{ $partitur->tingkat_kesulitan }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="kebutuhan_solo{{ $partitur->id }}">Kebutuhan Solo</label>
-                                        <input type="text" class="form-control" id="kebutuhan_solo{{ $partitur->id }}" name="kebutuhan_solo" value="{{ $partitur->kebutuhan_solo }}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="jenis_suara{{ $partitur->id }}">Jenis Suara</label>
-                                        <input type="text" class="form-control" id="jenis_suara{{ $partitur->id }}" name="jenis_suara" value="{{ $partitur->jenis_suara }}" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-                                </form>
+                    <!-- Modal Edit -->
+                    <div class="modal fade" id="editModal{{ $partitur->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $partitur->id }}" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel{{ $partitur->id }}">Edit Partitur</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ route('partitur.update', $partitur->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="form-group">
+                                            <label for="judul{{ $partitur->id }}">Judul</label>
+                                            <input type="text" class="form-control" id="judul{{ $partitur->id }}" name="judul" value="{{ $partitur->judul }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pembuat_aransemen{{ $partitur->id }}">Pembuat Aransemen</label>
+                                            <input type="text" class="form-control" id="pembuat_aransemen{{ $partitur->id }}" name="pembuat_aransemen" value="{{ $partitur->pembuat_aransemen }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="komposer{{ $partitur->id }}">Komposer</label>
+                                            <input type="text" class="form-control" id="komposer{{ $partitur->id }}" name="komposer" value="{{ $partitur->komposer }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="genre_lagu{{ $partitur->id }}">Genre Lagu</label>
+                                            <input type="text" class="form-control" id="genre_lagu{{ $partitur->id }}" name="genre_lagu" value="{{ $partitur->genre_lagu }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="link_youtube{{ $partitur->id }}">Link YouTube</label>
+                                            <input type="text" class="form-control" id="link_youtube{{ $partitur->id }}" name="link_youtube" value="{{ $partitur->link_youtube }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kebutuhan_instrumen{{ $partitur->id }}">Kebutuhan Instrumen</label>
+                                            <input type="text" class="form-control" id="kebutuhan_instrumen{{ $partitur->id }}" name="kebutuhan_instrumen" value="{{ $partitur->kebutuhan_instrumen }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tingkat_kesulitan{{ $partitur->id }}">Tingkat Kesulitan</label>
+                                            <input type="text" class="form-control" id="tingkat_kesulitan{{ $partitur->id }}" name="tingkat_kesulitan" value="{{ $partitur->tingkat_kesulitan }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="kebutuhan_solo{{ $partitur->id }}">Kebutuhan Solo</label>
+                                            <input type="text" class="form-control" id="kebutuhan_solo{{ $partitur->id }}" name="kebutuhan_solo" value="{{ $partitur->kebutuhan_solo }}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jenis_suara{{ $partitur->id }}">Jenis Suara</label>
+                                            <input type="text" class="form-control" id="jenis_suara{{ $partitur->id }}" name="jenis_suara" value="{{ $partitur->jenis_suara }}" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                @endforeach
-            </tbody>
-        </table>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Tambahkan script JS Bootstrap atau JS lainnya yang diperlukan -->

@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\PartiturController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ManageTaskController;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,16 +17,13 @@ use App\Http\Controllers\ManageTaskController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    //Route Login Logout
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('login', [LoginController::class, 'login']);
+    Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
-// Halaman login
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-
-// Rute untuk logout
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
-// Middleware untuk memastikan hanya pengguna yang sudah login yang bisa mengakses dashboard
-Route::middleware(['auth'])->group(function () {
+    // Middleware untuk memastikan hanya pengguna yang sudah login yang bisa mengakses dashboard
+    Route::middleware(['auth'])->group(function () {
     Route::get('/admin-dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('/manage-task', [DashboardController::class, 'manageTask'])->name('dashboard.manageTask');
     Route::get('/proposal', [DashboardController::class, 'proposal'])->name('dashboard.proposal');
