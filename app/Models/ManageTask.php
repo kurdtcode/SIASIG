@@ -32,12 +32,17 @@ class ManageTask extends Model
     // Relasi: Latihan milik satu Anggota
     public function anggota()
     {
-        return $this->belongsTo(Anggota::class);
+        return $this->belongsToMany(Anggota::class, 'task_anggota', 'task_id', 'anggota_id');
     }
 
     public function partitur()
     {
         return $this->belongsTo(Partitur::class);
+    }
+
+    public function latihan()
+    {
+        return $this->hasMany(Latihan::class, 'task_id');
     }
 
 }

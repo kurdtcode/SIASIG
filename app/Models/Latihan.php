@@ -12,21 +12,15 @@ class Latihan extends Model
     protected $table = 'latihan';
 
     protected $fillable = [
+        'task_id',
         'nama_latihan',
-        'waktu',
-        'tugas_id',
-        'anggota_id',
+        'anggota',
+        'absensi',
+        'deskripsi',
     ];
 
-    // Relasi: Latihan milik satu Tugas
-    public function tugas()
+    public function task()
     {
-        return $this->belongsTo(Tugas::class);
-    }
-
-    // Relasi: Latihan milik satu Anggota
-    public function anggota()
-    {
-        return $this->belongsTo(Anggota::class);
+        return $this->belongsTo(ManageTask::class, 'task_id');
     }
 }

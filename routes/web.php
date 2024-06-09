@@ -7,6 +7,9 @@ use App\Http\Controllers\PartiturController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ManageTaskController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LatihanController;
+use App\Http\Controllers\AbsensiController;
+use App\Http\Controllers\TaskController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,6 +59,18 @@ use App\Http\Controllers\Auth\LoginController;
     Route::get('manage_task/{id}/edit', [ManageTaskController::class, 'edit'])->name('manage_task.edit');
     Route::put('manage_task/{id}', [ManageTaskController::class, 'update'])->name('manage_task.update');
     Route::delete('manage_task/{id}', [ManageTaskController::class, 'destroy'])->name('manage_task.destroy');
+
+    //Route for Update Absensi
+    Route::get('/task-list', [TaskController::class, 'index'])->name('dashboard.task-list');
+    Route::get('/absensi/{taskId}/check', [AbsensiController::class, 'showCheckForm'])->name('absensi.check');
+    Route::post('/absensi/{taskId}/check', [AbsensiController::class, 'submitCheckForm'])->name('absensi.submitCheckForm');
+    Route::get('/absensi/{taskId}/sheet-report', [AbsensiController::class, 'showSheetReport'])->name('absensi.sheetReport');
+    Route::post('/update-absensi', [AbsensiController::class, 'updateAbsensi'])->name('updateAbsensi');
+
+    //Route for PDF Export (Task)
+    Route::get('/export-tasks-pdf', [App\Http\Controllers\TaskController::class, 'exportToPDF'])->name('export.tasks.pdf');
+
+
 });
 
 // Halaman awal

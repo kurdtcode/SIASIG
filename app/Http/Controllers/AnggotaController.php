@@ -17,7 +17,7 @@ class AnggotaController extends Controller
     public function store(Request $request)
     {
         $anggota = new Anggota();
-        $anggota->nrp = $request->nrp;
+        $anggota->NRP = $request->NRP;
         $anggota->name = $request->name;
         $anggota->email = $request->email;
         $anggota->role = $request->role;
@@ -36,7 +36,7 @@ class AnggotaController extends Controller
     public function update(Request $request, $id)
     {
         $anggota = Anggota::findOrFail($id);
-        $anggota->nrp = $request->nrp;
+        $anggota->NRP = $request->NRP;
         $anggota->name = $request->name;
         $anggota->email = $request->email;
         $anggota->role = $request->role;
