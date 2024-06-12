@@ -164,8 +164,12 @@
 <script>
     document.querySelectorAll('.form-check-input').forEach(checkbox => {
         checkbox.addEventListener('change', function() {
-            const hiddenInput = this.nextElementSibling;
-            hiddenInput.value = this.checked ? '1' : '0';
+            if (this.checked) {
+                this.nextElementSibling.value = '1';
+                this.setAttribute('disabled', 'true');
+            } else {
+                this.nextElementSibling.value = '0';
+            }
         });
     });
 
