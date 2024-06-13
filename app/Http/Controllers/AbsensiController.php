@@ -74,7 +74,7 @@ class AbsensiController extends Controller
 
     public function showAttendanceForm()
     {
-        $task = Task::find(1); // Example: Get the specific task
+        $task = Tas k::find(1); // Example: Get the specific task
         $anggota = Member::all(); // Example: Get all members
         $latihan = Latihan::all(); // Example: Get all latihan
         $check_attd = [];
