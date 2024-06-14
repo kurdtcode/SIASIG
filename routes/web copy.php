@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\TaskController;
-use App\Http\Controllers\CreateAdminController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +31,8 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['superadmin'])->group(function () {
         // Route for creating admins
-        Route::get('/create-admin', [CreateAdminController::class, 'create'])->name('admin.create');
-        Route::post('/create-admin', [CreateAdminController::class, 'store'])->name('admin.store');
+        Route::get('/create-admin', [AdminController::class, 'create'])->name('admin.create');
+        Route::post('/create-admin', [AdminController::class, 'store'])->name('admin.store');
 
         // Route for creating anggota
         Route::get('/create-anggota', [AnggotaController::class, 'create'])->name('anggota.create');

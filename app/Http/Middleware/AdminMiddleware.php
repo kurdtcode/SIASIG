@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Anggota;
 
-class AdminMiddleware
+class SuperAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,7 +17,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->hasRole('admin')) {
+        $user = Auth::user();
+        $anggota = Anggota::where('email', $user->email)->first();
+        
+        if ($anggota && $anggota->role === 'super admin') {
             return $next($request);
         }
 
