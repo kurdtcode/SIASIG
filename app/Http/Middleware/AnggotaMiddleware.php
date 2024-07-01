@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class SuperAdminMiddleware
+class AnggotaMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->user() && auth()->user()->usertype == 'super_admin') {
+        if (auth()->user() && auth()->user()->usertype == 'anggota') {
             return $next($request);
         }
-        return redirect('/login')->with('error', 'You do not have superadmin access');
+        return redirect('/login')->with('error', 'You do not have anggota access');
     }
 }

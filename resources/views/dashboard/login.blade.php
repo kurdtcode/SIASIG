@@ -56,12 +56,12 @@
                                 <form role="form" method="POST" action="{{ route('login') }}" class="text-start">
                                     @csrf
                                     <div class="input-group input-group-outline my-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" required>
+                                        <label class="form-label"></label>
+                                        <input type="email" class="form-control" name="email" placeholder="Email" required>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password" required>
+                                        <label class="form-label"></label>
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                                     </div>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">
                                         <input class="form-check-input" type="checkbox" name="remember" id="rememberMe">

@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'usertype',
     ];
 
     /**
@@ -43,5 +44,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function anggota()
+    {
+        return $this->hasOne(Anggota::class, 'email', 'email');
     }
 }

@@ -3,10 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Anggota;
+use Illuminate\Http\Request;
 
-class SuperAdminMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,15 +14,11 @@ class SuperAdminMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
-        $anggota = Anggota::where('email', $user->email)->first();
-        
-        if ($anggota && $anggota->role === 'super admin') {
+        if (auth()->user() && auth()->user()->usertype == 'admin') {
             return $next($request);
         }
-
-        return redirect('/')->with('error', 'You do not have access to this resource.');
+        return redirect('/login')->with('error', 'You do not have admin access');
     }
 }

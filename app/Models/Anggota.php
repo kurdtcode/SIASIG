@@ -37,5 +37,9 @@ class Anggota extends Model
     {
         return $this->belongsTo(Partitur::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'email', 'email');
+    }
 }
 
